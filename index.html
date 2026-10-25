@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>nour-academy</title>
   </head>
   <body>
@@ -17,19 +17,40 @@
         </div>
       </div>
 
-<div id="cart" class="bg-cyan-200 rounded-full  relative cursor-pointer ">
-  <svg  class=" size-16 text-cyan-700 p-4  " xmlns="http://w3.org" viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-  
-  <line x1="3" y1="6" x2="21" y2="6" />
-  
-  
-  <path d="M16 10a4 4 0 0 1-8 0" />
+      <ul class=" gap-4  text-lg font-bold text-cyan-700 hidden md:flex">
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Home</a></li>
+      </ul>
+      <div id="cart" class="bg-cyan-200 rounded-full relative cursor-pointer">
+        <svg
+          class="size-16 text-cyan-700 p-4"
+          xmlns="http://w3.org"
+          viewBox="0 0 24 24"
+          width="100%"
+          height="100%"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
 
-  <span class=" absolute inset-0 flex items-end  z-10 "><h1 id="cart-num" class=" bg-red-600 px-2 text-white font-bold rounded-full ">0</h1></span>
-</svg>
+          <line x1="3" y1="6" x2="21" y2="6" />
 
-</div>
+          <path d="M16 10a4 4 0 0 1-8 0" />
+
+          <span class="absolute inset-0 flex items-end z-10">
+            <h1
+              id="cart-num"
+              class="bg-red-600 px-2 text-white font-bold rounded-full"
+            >
+              0
+            </h1>
+          </span>
+        </svg>
+      </div>
     </header>
 
     <main class="flex flex-col gap-2 p-4 justify-center items-center">
@@ -90,16 +111,10 @@
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-4"
       ></section>
     </main>
-    
-
-
-
-
-
 
     <footer class="bg-cyan-700 text-white text-center font-bold p-4">
       © Nour Academy - 2026
     </footer>
-    <script  src="./src/main.js"></script>
+    <script src="./src/main.js"></script>
   </body>
 </html>

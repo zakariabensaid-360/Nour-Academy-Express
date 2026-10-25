@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 80;
 
 app.use(express.static(path.join(__dirname)));
 
-app.get('/about', (req, res) => {
+app.get('/about.html', (req, res) => {
   res.sendFile(path.join(__dirname, './pages/about.html'));
 });
 
