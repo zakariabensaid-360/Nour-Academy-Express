@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Sun / Radial Light Gradient -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="60%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </radialGradient>
+
+    <!-- Ray Gradient -->
+    <linearGradient id="rayGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Perfectly Centered Icon Group -->
+  <g transform="translate(0, -10)">
+    <!-- Radiating Rays ("Nour" / Light) -->
+    <g id="rays">
+      <!-- Center Ray -->
+      <polygon points="400,195 394,90 406,90" fill="url(#rayGrad)" />
+      <!-- Left Inner Ray -->
+      <polygon points="390,200 350,110 361,105" fill="url(#rayGrad)" />
+      <!-- Right Inner Ray -->
+      <polygon points="410,200 450,110 439,105" fill="url(#rayGrad)" />
+      <!-- Left Outer Ray -->
+      <polygon points="385,205 310,135 318,126" fill="url(#rayGrad)" />
+      <!-- Right Outer Ray -->
+      <polygon points="415,205 490,135 482,126" fill="url(#rayGrad)" />
+      <!-- Far Left Ray -->
+      <polygon points="380,210 275,170 281,159" fill="url(#rayGrad)" />
+      <!-- Far Right Ray -->
+      <polygon points="420,210 525,170 519,159" fill="url(#rayGrad)" />
+    </g>
+
+    <!-- Rising Sun Dome -->
+    <path d="M 330,220 A 70,70 0 0,1 470,220 Z" fill="url(#sunGlow)" />
+
+    <!-- Open Book Pages (Navy #1E3A8A) -->
+    <!-- Left Inner Page -->
+    <path d="M 400,240 C 340,215 280,225 220,245 C 220,200 280,180 400,210 Z" fill="#1E3A8A" />
+    <!-- Right Inner Page -->
+    <path d="M 400,240 C 460,215 520,225 580,245 C 580,200 520,180 400,210 Z" fill="#1E3A8A" />
+
+    <!-- Outer Book Cover Base & Spine -->
+    <path d="M 400,252 C 335,225 270,237 205,258 L 210,242 C 275,222 335,210 400,235 C 465,210 525,222 590,242 L 595,258 C 530,237 465,225 400,252 Z" fill="#0F172A" />
+
+    <!-- Page Highlights -->
+    <path d="M 395,236 C 340,212 285,222 230,240 C 285,226 340,216 395,236 Z" fill="#E2E8F0" />
+    <path d="M 405,236 C 460,212 515,222 570,240 C 515,226 460,216 405,236 Z" fill="#E2E8F0" />
+  </g>
+
+  <!-- Centered Title Typography using text-anchor="middle" -->
+  <text x="400" y="355" text-anchor="middle" font-family="&#39;Inter&#39;, &#39;Montserrat&#39;, &#39;Segoe UI&#39;, sans-serif" font-size="52" letter-spacing="3">
+    <tspan font-weight="900" fill="#1E3A8A">NOUR </tspan>
+    <tspan font-weight="800" fill="#059669">ACADEMY</tspan>
+  </text>
+
+  <!-- Subtitle Tagline -->
+  <text x="400" y="390" text-anchor="middle" font-family="&#39;Inter&#39;, &#39;Segoe UI&#39;, sans-serif" font-weight="600" font-size="15" letter-spacing="5" fill="#64748B">NADOR • HAY AL MATAR • SELOUANE</text>
+</svg>

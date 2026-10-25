@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>nour-academy</title>
+  </head>
+  <body>
+    <header class="flex justify-between p-4 items-center bg-cyan-50">
+      <div class="flex justify-center items-center">
+        <img width="150px" height="150px" src="./public/logo.svg" />
+        <div class="flex flex-col gap-1">
+          <h1 class="text-2xl text-cyan-700 font-black">Nour Academy</h1>
+          <p class="text-gray-500">The Best academy</p>
+        </div>
+      </div>
+
+<div id="cart" class="bg-cyan-200 rounded-full  relative cursor-pointer ">
+  <svg  class=" size-16 text-cyan-700 p-4  " xmlns="http://w3.org" viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+  
+  <line x1="3" y1="6" x2="21" y2="6" />
+  
+  
+  <path d="M16 10a4 4 0 0 1-8 0" />
+
+  <span class=" absolute inset-0 flex items-end  z-10 "><h1 id="cart-num" class=" bg-red-600 px-2 text-white font-bold rounded-full ">0</h1></span>
+</svg>
+
+</div>
+    </header>
+
+    <main class="flex flex-col gap-2 p-4 justify-center items-center">
+      <h1 class="text-cyan-700 text-4xl font-bold pb-6">Our Courses</h1>
+      <div class="flex flex-col gap-4">
+        <label>
+          <h1>Search</h1>
+          <input
+            id="search"
+            value=""
+            placeholder="search for your course"
+            class="p-2 border-cyan-700 border-2 rounded-lg pr-6"
+            type="text"
+          />
+        </label>
+
+        <div class="flex gap-3">
+          <select
+            class="p-2 border-2 border-cyan-700 rounded-lg"
+            name="select"
+            id="level"
+          >
+            <option value="">All Levels</option>
+            <option value="1ère Bac">1ère Bac</option>
+            <option value="2ème Bac">2ème Bac</option>
+            <option value="Primaire">Primaire</option>
+            <option value="Collège">Collège</option>
+          </select>
+          <select
+            class="p-2 border-2 border-cyan-700 rounded-lg"
+            name="select"
+            id="location"
+          >
+            <option value="">All Locations</option>
+            <option value="Nador Centre">Nador Centre</option>
+            <option value="Hay Al Matar">Hay Al Matar</option>
+            <option value="Selouane">Selouane</option>
+          </select>
+
+          <select
+            class="p-2 border-2 border-cyan-700 rounded-lg"
+            id="subject"
+            name="select"
+          >
+            <option value="">All Subjects</option>
+            <option value="Mathématiques">Mathématiques</option>
+            <option value="Français">Français</option>
+            <option value="Physique-Chimie">Physique-Chimie</option>
+            <option value="SVT">SVT</option>
+            <option value="Anglais">Anglais</option>
+            <option value="Philosophie">Philosophie</option>
+          </select>
+        </div>
+      </div>
+
+      <section
+        id="cards"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-4"
+      ></section>
+    </main>
+    
+
+
+
+
+
+
+    <footer class="bg-cyan-700 text-white text-center font-bold p-4">
+      © Nour Academy - 2026
+    </footer>
+    <script  src="./main.js"></script>
+  </body>
+</html>

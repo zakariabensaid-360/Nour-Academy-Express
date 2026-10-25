@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>nour-academy</title>
+  </head>
+  <body>
+    <header class="flex justify-between p-4 items-center bg-cyan-50">
+      <div class="flex justify-center items-center">
+        <img width="150px" height="150px" src="./public/logo.svg" />
+        <div class="flex flex-col gap-1">
+          <h1 class="text-2xl text-cyan-700 font-black">Nour Academy</h1>
+          <p class="text-gray-500">The Best academy</p>
+        </div>
+      </div>
+
+
+      
+<div id="cart" class="bg-cyan-200 rounded-full  relative cursor-pointer hidden">
+  <svg  class=" size-16 text-cyan-700 p-4  " xmlns="http://w3.org" viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+  
+  <line x1="3" y1="6" x2="21" y2="6" />
+  
+  
+  <path d="M16 10a4 4 0 0 1-8 0" />
+
+  <span class=" absolute inset-0 flex items-end  z-10 "><h1 id="cart-num" class=" bg-red-600 px-2 text-white font-bold rounded-full ">0</h1></span>
+</svg>
+
+</div>
+    </header>
+
+
+    
+    
+<section id="section-cart"></section>
+
+
+<div class="w-full max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 text-slate-800">
+  <form class="space-y-8">
+    
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ">
+      
+   
+      <div class="space-y-4">
+  
+        <div class="mb-6">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 font-bold text-sm">
+              01
+            </span>
+            <h2 class="text-xl font-bold text-slate-900">L'élève</h2>
+          </div>
+          <p class="text-xs text-slate-500 mt-2">
+            Les champs marqués d'un <span class="text-slate-700">*</span> sont obligatoires.
+          </p>
+        </div>
+
+   
+        <div>
+          <label for="prenom" class="block text-sm font-bold text-slate-900 mb-1">
+            Prénom <span class="text-slate-900">*</span>
+          </label>
+          <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            placeholder="Yasmine"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 placeholder-slate-400"
+          />
+        </div>
+
+       
+        <div>
+          <label for="nom" class="block text-sm font-bold text-slate-900 mb-1">
+            Nom <span class="text-slate-900">*</span>
+          </label>
+          <input
+            type="text"
+            id="nom"
+            name="nom"
+            placeholder="El Amrani"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 placeholder-slate-400"
+          />
+        </div>
+
+   
+        <div>
+          <label for="dob" class="block text-sm font-bold text-slate-900 mb-1">
+            Date de naissance <span class="text-slate-900">*</span>
+          </label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800"
+          />
+        </div>
+
+    
+        <div>
+          <label for="etablissement" class="block text-sm font-bold text-slate-900 mb-1">
+            Établissement scolaire <span class="text-slate-900">*</span>
+          </label>
+          <input
+            type="text"
+            id="etablissement"
+            name="etablissement"
+            placeholder="Lycée Abdelkrim El Khattabi"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 placeholder-slate-400"
+          />
+        </div>
+
+       
+        <div>
+          <label for="niveau" class="block text-sm font-bold text-slate-900 mb-1">
+            Niveau scolaire <span class="text-slate-900">*</span>
+          </label>
+          <select
+            id="niveau"
+            name="niveau"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 bg-white"
+          >
+            <option value="" disabled selected>Sélectionner un niveau</option>
+            <option value="1ere Bac">1ère Bac</option>
+            <option value="2eme Bac">2ème Bac</option>
+            <option value="Tronc Commun">Tronc Commun</option>
+          </select>
+        </div>
+
+    
+        <div>
+          <label for="centre" class="block text-sm font-bold text-slate-900 mb-1">
+            Centre souhaité <span class="text-slate-900">*</span>
+          </label>
+          <select
+            id="centre"
+            name="centre"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 bg-white"
+          >
+            <option value="" disabled selected>Sélectionner un centre</option>
+            <option value="Nador">Nador</option>
+            <option value="Oujda">Oujda</option>
+            <option value="Berkane">Berkane</option>
+          </select>
+        </div>
+
+     
+        <div>
+          <label for="filiere" class="block text-sm font-bold text-slate-900 mb-1">
+            Filière
+          </label>
+          <select
+            id="filiere"
+            name="filiere"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 bg-white"
+          >
+            <option value="" disabled selected>Sélectionner une filière</option>
+            <option value="Sciences physiques">Sciences physiques</option>
+            <option value="Sciences mathématiques">Sciences mathématiques</option>
+            <option value="SVT">SVT</option>
+          </select>
+        </div>
+      </div>
+
+      
+      <div class="space-y-4">
+     
+        <div class="mb-6">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 font-bold text-sm">
+              02
+            </span>
+            <h2 class="text-xl font-bold text-slate-900">Parent ou responsable</h2>
+          </div>
+          <p class="text-xs text-slate-500 mt-2">
+            Ces coordonnées serviront au suivi de la demande.
+          </p>
+        </div>
+
+    
+        <div>
+          <label for="parent_nom" class="block text-sm font-bold text-slate-900 mb-1">
+            Nom complet <span class="text-slate-900">*</span>
+          </label>
+          <input
+            type="text"
+            id="parent_nom"
+            name="parent_nom"
+            placeholder="Samira El Amrani"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 placeholder-slate-400"
+          />
+        </div>
+
+      
+        <div>
+          <label for="parent_lien" class="block text-sm font-bold text-slate-900 mb-1">
+            Lien avec l'élève <span class="text-slate-900">*</span>
+          </label>
+          <select
+            id="parent_lien"
+            name="parent_lien"
+            required
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 bg-white"
+          >
+            <option value="" disabled>Sélectionner un lien</option>
+            <option value="Mère" selected>Mère</option>
+            <option value="Père">Père</option>
+            <option value="Tuteur légal">Tuteur légal</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="parent_phone" class="block text-sm font-bold text-slate-900 mb-1">
+            Téléphone mobile <span class="text-slate-900">*</span>
+          </label>
+          <div class="relative">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              max="9"
+             placeholder="0612345678"
+              required
+              class="w-full px-4 py-3 pr-10 rounded-xl border  focus:outline-none focus:ring-2  text-slate-800"
+            />
+
+            </div><div>
+              
+                  <button
+                  id="sub"
+        type="submit"
+        class="w-full sm:w-auto px-8 py-3.5 mt-8 bg-cyan-600 hover:bg-cyan-700 text-white font-bold rounded-xl shadow-sm hover:shadow transition duration-200"
+      >
+        Soumettre la demande
+      </button>
+      <span id="price" class=" font-bold text-cyan-600"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <label for="parent_email" class="block text-sm font-bold text-slate-900 mb-1">
+            Adresse e-mail
+          </label>
+          <input
+            type="email"
+            required
+            id="parent_email"
+            name="parent_email"
+            placeholder="samira.elamrani@gmail.com"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-slate-800 placeholder-slate-400"
+          />
+          <p class="text-xs text-slate-400 mt-1">
+            Facultatif · Pour recevoir une copie de la demande.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+    <footer class="bg-cyan-700 text-white text-center font-bold p-4">
+      © Nour Academy - 2026
+    </footer>
+    <script  src="./process.js"></script>
+  </body>
+</html>
