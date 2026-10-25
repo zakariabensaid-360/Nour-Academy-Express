@@ -149,8 +149,20 @@ cart_num.textContent = cartitems.length
   const hide = () => {
     modal.className += " hidden"
   }*/
+
+const findItemByid = (id) => {
+  for (let i = 0; i < cartitems.length; i++) {
+    if(id == cartitems[i].id) {
+      return true
+    }
+  }
+  return false
+}
 function addtocart(id) {
-  cart_num.classList.remove("hidden")
+  
+
+if(findItemByid(id)) return alert("you cannot add same course twice");
+  cart_num.classList.remove("hidden")  
   cart_num.textContent = Number(cart_num.textContent) + 1
   for(let i = 0; i < db.length; i++) {
     if(db[i].id == id)
