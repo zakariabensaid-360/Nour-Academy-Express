@@ -173,7 +173,7 @@ const rerender = (itemsToRender) => {
                   class="object-fit"
                   height="50px"
                   width="50px"
-                  src="./public/${item.subject}.svg" 
+                  src="../public/${item.subject}.svg" 
                   alt=""
                 />
                 <span class="bg-white p-1 rounded-lg text-cyan-700">${item.level}</span>
