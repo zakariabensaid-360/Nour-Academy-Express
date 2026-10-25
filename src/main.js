@@ -158,10 +158,29 @@ const findItemByid = (id) => {
   }
   return false
 }
+
+const removeSeat = (id) => {
+  let newdb = []
+  for (let i = 0; i < db.length; i++) {
+    if(id == db[i].id) {
+      db[i].remainingSeats -= 1
+      newdb.push(db[i])
+      continue
+    }
+
+    newdb.push(db[i])
+     
+  }console.log(newdb)
+      
+     window.localStorage.setItem("db", JSON.stringify(newdb));
+     db = newdb
+     rerender(db)
+}
 function addtocart(id) {
   
 
 if(findItemByid(id)) return alert("you cannot add same course twice");
+removeSeat(id)
   cart_num.classList.remove("hidden")  
   cart_num.textContent = Number(cart_num.textContent) + 1
   for(let i = 0; i < db.length; i++) {
