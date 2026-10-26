@@ -68,6 +68,31 @@ submitButton.addEventListener('click', (event) => {
     return;
   }
 
+
+  const passwordInput = document.getElementById('password');
+const confirmInput = document.getElementById('confirm');
+
+
+    const password = passwordInput.value;
+    const confirmPassword = confirmInput.value;
+
+
+    if (password.length < 10) {
+       passwordInput.style.borderColor = "red";
+        alert('Password must be at least 10 characters long.');
+        passwordInput.focus();
+        event.preventDefault(); 
+        return;
+    }
+
+    if (password !== confirmPassword) {
+      confirmInput.style.borderColor = "red"
+          passwordInput.style.borderColor = "red";
+        alert('Passwords do not match.');
+        confirmInput.focus();
+        event.preventDefault();
+        return;
+    }
   event.preventDefault();
 
   const prenomVal      = document.getElementById('prenom').value;
@@ -104,3 +129,8 @@ submitButton.addEventListener('click', (event) => {
   window.localStorage.setItem("refrence", JSON.stringify(allSubmissions));
   window.location.href = "/valid";
 });
+
+
+
+
+
