@@ -55,6 +55,7 @@ price.textContent = `${totalprice} MAD / MONTH`;
 const submitButton = document.getElementById("sub");
 
 submitButton.addEventListener("click", (event) => {
+
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
@@ -84,7 +85,7 @@ submitButton.addEventListener("click", (event) => {
     { id: "filiere", label: "Filière", value: filiereVal },
     { id: "parent_nom", label: "Nom du parent", value: parentNomVal },
     { id: "parent_lien", label: "Lien avec l'élève", value: parentLienVal },
-    { id: "phone", label: "Téléphone", value: phoneVal },
+    { id: "phone", label: "Téléphone", value: phoneInput.value },
     { id: "parent_email", label: "E-mail du parent", value: parentEmailVal },
   ];
 
@@ -111,8 +112,8 @@ passwordInput.addEventListener("blur", () => {
     passwordError.textContent = "Password must be at least 10 characters long."
     //  alert('Password must be at least 10 characters long.');
   
-    event.preventDefault();
-    return;
+    // event.preventDefault();
+    //return;
   } else {
         passwordInput.style.borderColor = "green"
     passwordError.textContent = ""
@@ -132,8 +133,8 @@ confirmInput.addEventListener("blur", () => {
     // passwordError.textContent = "Password must be at least 10 characters long."
       conformError.textContent = "Passwords do not match."
     // alert('Passwords do not match.');
-    event.preventDefault();
-    return;
+   // event.preventDefault();
+    //return;
   } else {
     confirmInput.style.borderColor = "green"
       conformError.textContent = ""
