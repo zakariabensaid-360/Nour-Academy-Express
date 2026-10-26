@@ -1,22 +1,24 @@
-const phoneInput = document.getElementById('phone');
+const phoneInput = document.getElementById("phone");
 let subbtn = document.getElementById("sub");
-const form = document.querySelector('form'); 
-
-phoneInput.addEventListener('blur', function() {
-    const phonePattern = /^\+?[0-9]{8,15}$/; 
-    if (phonePattern.test(this.value)) {
-        this.style.borderColor = "green";
-        subbtn.disabled = false;
-    } else {
-        this.style.borderColor = "red";
-        subbtn.disabled = true;
-    }
+const form = document.querySelector("form");
+const telErr = document.getElementById("tel-error");
+phoneInput.addEventListener("blur", function () {
+  const phonePattern = /^\+?[0-9]{8,15}$/;
+  if (phonePattern.test(this.value)) {
+    this.style.borderColor = "green";
+    subbtn.disabled = false;
+    telErr.textContent = "";
+  } else {
+    this.style.borderColor = "red";
+    telErr.textContent = "please entre a valid phone number";
+    subbtn.disabled = true;
+  }
 });
 
 let cart_num = document.getElementById("cart-num");
 
 if (window.localStorage.getItem("cart_items") == undefined) {
-    window.location.href = "/";
+  window.location.href = "/";
 }
 
 let items = JSON.parse(window.localStorage.getItem("cart_items"));
@@ -28,10 +30,10 @@ let cart_section = document.getElementById("section-cart");
 let totalprice = 0;
 let item;
 for (let i = 0; i < items.length; i++) {
-    item = items[i];
-    totalprice += item.price;
+  item = items[i];
+  totalprice += item.price;
 
-    cart_section.innerHTML += `<div class="flex items-center justify-between gap-3 bg-white p-2 rounded-lg border border-cyan-100 shadow-sm">
+  cart_section.innerHTML += `<div class="flex items-center justify-between gap-3 bg-white p-2 rounded-lg border border-cyan-100 shadow-sm">
   <div class="flex items-center gap-2.5 min-w-0">
     <img
       class="w-6 h-6 rounded bg-cyan-50 p-0.5 object-contain shrink-0"
@@ -50,62 +52,27 @@ for (let i = 0; i < items.length; i++) {
 
 price.textContent = `${totalprice} MAD / MONTH`;
 
-const submitButton = document.getElementById('sub');
+const submitButton = document.getElementById("sub");
 
-submitButton.addEventListener('click', (event) => {
-
+submitButton.addEventListener("click", (event) => {
   if (!form.checkValidity()) {
-    form.reportValidity(); 
+    form.reportValidity();
     return;
   }
 
-  const phonePattern = /^\+?[0-9]{8,15}$/;
-  const phoneVal = phoneInput.value;
-  if (!phonePattern.test(phoneVal)) {
-    phoneInput.style.borderColor = "red";
-    phoneInput.focus();
-    alert("Please enter a valid phone number (8 to 15 digits).");
-    return;
-  }
-
-
-  const passwordInput = document.getElementById('password');
-const confirmInput = document.getElementById('confirm');
-
-
-    const password = passwordInput.value;
-    const confirmPassword = confirmInput.value;
-
-
-    if (password.length < 10) {
-       passwordInput.style.borderColor = "red";
-        alert('Password must be at least 10 characters long.');
-        passwordInput.focus();
-        event.preventDefault(); 
-        return;
-    }
-
-    if (password !== confirmPassword) {
-      confirmInput.style.borderColor = "red"
-          passwordInput.style.borderColor = "red";
-        alert('Passwords do not match.');
-        confirmInput.focus();
-        event.preventDefault();
-        return;
-    }
   event.preventDefault();
 
-  const prenomVal      = document.getElementById('prenom').value;
-  const nomVal         = document.getElementById('nom').value;
-  const dobVal         = document.getElementById('dob').value;
-  const etablissementVal = document.getElementById('etablissement').value;
-  const niveauVal      = document.getElementById('niveau').value;
-  const centreVal      = document.getElementById('centre').value;
-  const filiereVal     = document.getElementById('filiere').value;
-  
-  const parentNomVal   = document.getElementById('parent_nom').value;
-  const parentLienVal  = document.getElementById('parent_lien').value;
-  const parentEmailVal = document.getElementById('parent_email').value;
+  const prenomVal = document.getElementById("prenom").value;
+  const nomVal = document.getElementById("nom").value;
+  const dobVal = document.getElementById("dob").value;
+  const etablissementVal = document.getElementById("etablissement").value;
+  const niveauVal = document.getElementById("niveau").value;
+  const centreVal = document.getElementById("centre").value;
+  const filiereVal = document.getElementById("filiere").value;
+
+  const parentNomVal = document.getElementById("parent_nom").value;
+  const parentLienVal = document.getElementById("parent_lien").value;
+  const parentEmailVal = document.getElementById("parent_email").value;
 
   const data = [
     { id: "prenom", label: "Prénom", value: prenomVal },
@@ -118,10 +85,11 @@ const confirmInput = document.getElementById('confirm');
     { id: "parent_nom", label: "Nom du parent", value: parentNomVal },
     { id: "parent_lien", label: "Lien avec l'élève", value: parentLienVal },
     { id: "phone", label: "Téléphone", value: phoneVal },
-    { id: "parent_email", label: "E-mail du parent", value: parentEmailVal }
+    { id: "parent_email", label: "E-mail du parent", value: parentEmailVal },
   ];
 
-  const allSubmissions = JSON.parse(window.localStorage.getItem("refrence")) || [];
+  const allSubmissions =
+    JSON.parse(window.localStorage.getItem("refrence")) || [];
   allSubmissions.push(data);
 
   console.log("test");
@@ -130,7 +98,45 @@ const confirmInput = document.getElementById('confirm');
   window.location.href = "/valid";
 });
 
+const passwordError = document.getElementById("password-error");
+const conformError = document.getElementById("confirm-error")
+const passwordInput = document.getElementById("password");
+const confirmInput = document.getElementById("confirm");
+
+passwordInput.addEventListener("blur", () => {
+  const password = passwordInput.value;
+  
+  if (password.length < 10) {
+    passwordInput.style.borderColor = "red";
+    passwordError.textContent = "Password must be at least 10 characters long."
+    //  alert('Password must be at least 10 characters long.');
+  
+    event.preventDefault();
+    return;
+  } else {
+        passwordInput.style.borderColor = "green"
+    passwordError.textContent = ""
+  }
+
+  
+});
 
 
 
+confirmInput.addEventListener("blur", () => {
+  const password = passwordInput.value;
+  const confirmPassword = confirmInput.value;
+  if (password !== confirmPassword) {
+    confirmInput.style.borderColor = "red";
+   // passwordInput.style.borderColor = "red";
+    // passwordError.textContent = "Password must be at least 10 characters long."
+      conformError.textContent = "Passwords do not match."
+    // alert('Passwords do not match.');
+    event.preventDefault();
+    return;
+  } else {
+    confirmInput.style.borderColor = "green"
+      conformError.textContent = ""
 
+  }
+})
